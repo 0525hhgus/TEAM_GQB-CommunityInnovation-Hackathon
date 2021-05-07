@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="org.techtown.gwangjubus.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_location"
+            app:destination="@id/navigation_location" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_busstop"
+            app:destination="@id/navigation_busstop" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_alarm"
+            app:destination="@id/navigation_alarm" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_setting"
+            app:destination="@id/navigation_setting" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_busstop"
+        android:name="org.techtown.gwangjubus.ui.busstop.BusstopFragment"
+        android:label="정류장"
+        tools:layout="@layout/fragment_busstop" >
+        <action
+            android:id="@+id/action_navigation_busstop_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_alarm"
+        android:name="org.techtown.gwangjubus.ui.alarm.AlarmFragment"
+        android:label="도착알람"
+        tools:layout="@layout/fragment_alarm" >
+        <action
+            android:id="@+id/action_navigation_alarm_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_location"
+        android:name="org.techtown.gwangjubus.ui.location.LocationFragment"
+        android:label="내 위치"
+        tools:layout="@layout/fragment_location" >
+        <action
+            android:id="@+id/action_navigation_location_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="org.techtown.gwangjubus.ui.setting.SettingFragment"
+        android:label="환경설정"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_navigation_setting_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>
